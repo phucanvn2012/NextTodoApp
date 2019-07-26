@@ -7,16 +7,18 @@ export default () => {
                 yob:1997,
                 role:"internship"
             }
-        ])
-            // {   
-            //     id:2,
-            //     name:"Tran Huu Nhan",
-            //     email:"huunhan@gmail.com",
-            //     yob:1997,
-            //     role:"Support"
-            // }
+            ,
+            {   
+                id:2,
+                name:"Tran Huu Nhan",
+                email:"huunhan@gmail.com",
+                yob:1997,
+                role:"Support"
+            }
             
-            
+        ]
+    )
+    
         
 
 }

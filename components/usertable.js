@@ -1,67 +1,97 @@
-import React, {Component} from 'react'
-import fetch from 'isomorphic-unfetch'
+import React, {Component} from 'react';
 
-class UserTable extends React.Component{
-    static async getInitialProps({ req }) {
-        const res = await fetch('../data/userdata.js');
-        const data = await res.json();
-        //console.log(`Show data fetched. Count:$(data.length)`);
-        console.log(props);
-        return {
-            users : data
+
+export default class extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            users:null
         };
+
     }
-    
-    
+    getInitialProps(){
+        const res = fetch('http://localhost:4000/user')
+        .then(res => res.json())
+        .then(
+          (result) => {
+              console.log(result);
+            this.setState({
+              isLoaded: true,
+              users: result
+            });
+          },
+          // Note: it's important to handle errors here
+          // instead of a catch() block so that we don't swallow
+          // exceptions from actual bugs in components.
+          
+          
+        ).catch((e)=>{
+            console.log(e);
+        })
+    }
+  
+
+
+
+    componentDidMount(){
+        
+        let users = this.getInitialProps()
+        this.setState({
+            users: users
+        })
+        console.log(this.state.users)
+    }
+
+    renderTableHeader(){
+        if(!this.state.users){
+            return null
+        }
+        var myData = Object.assign({}, this.state.users[0]);
+        let header = Object.keys(myData)
+
+        return header.map((key,index)=>{
+
+            return (
+                <th key={index} >{key.toUpperCase()}</th>
+            )
+        })
+    }
+
+    renderTableData(){
+        if(!this.state.users) {
+            return null;
+        }
+        return this.state.users.map((data,index)=>{
+            const {id,name,email,yob,role}=data
+            return (
+                <tr key={id}>
+                    <td>{id}</td>
+                    <td>{name}</td>    
+                    <td>{email}</td>
+                    <td>{yob}</td>
+                    <td>{role}</td>
+                </tr>
+            )
+        })
+    }
 
     render(){
-        return(
+        return (
             <div>
-                <h1 className="text-center">User List Table</h1>
+
+                <h1 className="text-center">List Table</h1>
                 <table id="userData" className="table table-striped">
-                <thead className="thead-dark">
-                    <tr>
-                        {/* {this.props.users[0].id} */}
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    
-                </tbody>
-            </table>
-        </div>
+                    <thead className="thead-dark">
+                        <tr>
+                            {this.renderTableHeader()}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.renderTableData()}
+                    </tbody>
+                </table>
+            </div>
         )
     }
 }
 
-
-// renderTableHeader(){
-    //     var myData = Object.assign({}, users[0]);
-    //     let header = Object.keys(myData);
-
-    //     return header.map((key,index)=>{
-
-    //         return (
-    //             <th key={index} >{key.toUpperCase()}</th>
-    //         )
-    //     })
-    // };
-
-    // renderTableData(){
-    //     return users.map((data,index)=>{
-    //         const {id,name,email,yob,role}=newData
-    //         console.log(users)
-    //         return (
-    //             <tr key={id}>
-    //                 <td>{id}</td>
-    //                 <td>{name}</td>    
-    //                 <td>{email}</td>
-    //                 <td>{yob}</td>
-    //                 <td>{role}</td>
-    //             </tr>
-    //         )
-    //     })
-    // }
-
-
-    export default UserTable;
