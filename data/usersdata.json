@@ -1,27 +1,53 @@
-{    
-    "user":[    
-        {   
-            "id":1,
-            "name":"Tran Dai Phuc An",
-            "email":"phucanvn@btaskee.com",
-            "yob":1997,
-            "role":"internship"
-        }
-        ,
-        {   
-            "id":2,
-            "name":"Tran Huu Nhan",
-            "email":"huunhan@gmail.com",
-            "yob":1997,
-            "role":"Support"
-        }
-        ,
-        {   
-            "id":3,
-            "name":"Tran Dai Phuc An",
-            "email":"phucanvn@btaskee.com",
-            "yob":1997,
-            "role":"internship"
-        }
-    ]
+{
+  "user": [
+    {
+      "id": 2,
+      "name": "Tran Huu Nhan",
+      "email": "huunhan@gmail.com",
+      "yob": 1997,
+      "role": "Support"
+    },
+    {
+      "id": 3,
+      "name": "Tran Dai Phuc An",
+      "email": "phucanvn@btaskee.com",
+      "yob": 1997,
+      "role": "internship"
+    },
+    {
+      "id": 4,
+      "name": "Nguyen The Viet",
+      "email": "vietdemacia@gmail.com",
+      "yob": 1997,
+      "role": "student"
+    },
+    {
+      "id": 5,
+      "name": "Nguyen Han Linh",
+      "email": "hanlinhsenpai@btaskee.com",
+      "yob": 1984,
+      "role": "Go lang dev"
+    },
+    {
+      "id": 1,
+      "name": "Toan Pham",
+      "email": "toanpham@btaskee.com",
+      "yob": 1985,
+      "role": "LEAD"
+    },
+    {
+      "id": 9,
+      "name": "Nguyen Huu Toan",
+      "email": "huutoan@btaskee.com",
+      "yob": 1997,
+      "role": "junior front end dev "
+    },
+    {
+      "id": 10,
+      "name": "Nguyen Hong Khanh",
+      "email": "hongkhanh@btaskee.com",
+      "yob": 1998,
+      "role": "junior front end dev "
+    }
+  ]
 }

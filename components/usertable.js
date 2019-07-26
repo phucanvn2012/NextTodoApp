@@ -9,7 +9,8 @@ export default class extends Component{
         };
 
     }
-    getInitialProps(){
+
+        getInitialProps(){
         const res = fetch('http://localhost:4000/user')
         .then(res => res.json())
         .then(
@@ -39,8 +40,18 @@ export default class extends Component{
         this.setState({
             users: users
         })
-        console.log(this.state.users)
+        //console.log(this.state.users)
     }
+
+        // componentDidUpdate() {
+        //     fetch('http://localhost:4000/user')
+        //     .then(response => {
+        //         this.setState({users: response.data});
+        //     })
+        //     .catch(function (error) {
+        //         console.log(error);
+        //     })   
+    
 
     renderTableHeader(){
         if(!this.state.users){
@@ -48,6 +59,7 @@ export default class extends Component{
         }
         var myData = Object.assign({}, this.state.users[0]);
         let header = Object.keys(myData)
+        console.log(header);
 
         return header.map((key,index)=>{
 

@@ -313,9 +313,16 @@ function (_Component) {
       var users = this.getInitialProps();
       this.setState({
         users: users
-      });
-      console.log(this.state.users);
-    }
+      }); //console.log(this.state.users)
+    } // componentDidUpdate() {
+    //     fetch('http://localhost:4000/user')
+    //     .then(response => {
+    //         this.setState({users: response.data});
+    //     })
+    //     .catch(function (error) {
+    //         console.log(error);
+    //     })   
+
   }, {
     key: "renderTableHeader",
     value: function renderTableHeader() {
@@ -327,12 +334,13 @@ function (_Component) {
 
       var header = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(myData);
 
+      console.log(header);
       return header.map(function (key, index) {
         return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("th", {
           key: index,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 55
+            lineNumber: 67
           },
           __self: this
         }, key.toUpperCase());
@@ -355,37 +363,37 @@ function (_Component) {
           key: id,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 67
+            lineNumber: 79
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("td", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 68
+            lineNumber: 80
           },
           __self: this
         }, id), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("td", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 69
+            lineNumber: 81
           },
           __self: this
         }, name), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("td", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 70
+            lineNumber: 82
           },
           __self: this
         }, email), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("td", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 71
+            lineNumber: 83
           },
           __self: this
         }, yob), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("td", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 72
+            lineNumber: 84
           },
           __self: this
         }, role));
@@ -397,14 +405,14 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 92
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h1", {
         className: "text-center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 94
         },
         __self: this
       }, "List Table"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("table", {
@@ -412,26 +420,26 @@ function (_Component) {
         className: "table table-striped",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 95
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("thead", {
         className: "thead-dark",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 96
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("tr", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85
+          lineNumber: 97
         },
         __self: this
       }, this.renderTableHeader())), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("tbody", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 101
         },
         __self: this
       }, this.renderTableData())));
@@ -442,33 +450,6 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_7__["Component"]);
 
 
-
-/***/ }),
-
-/***/ "./data/userdata.js":
-/*!**************************!*\
-  !*** ./data/userdata.js ***!
-  \**************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (function () {
-  return [{
-    id: 1,
-    name: "Tran Dai Phuc An",
-    email: "phucanvn@btaskee.com",
-    yob: 1997,
-    role: "internship"
-  }, {
-    id: 2,
-    name: "Tran Huu Nhan",
-    email: "huunhan@gmail.com",
-    yob: 1997,
-    role: "Support"
-  }];
-});
 
 /***/ }),
 
@@ -11156,7 +11137,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
 /* harmony import */ var _components_usertable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/usertable */ "./components/usertable.js");
-/* harmony import */ var _data_userdata__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../data/userdata */ "./data/userdata.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/home/phucan/Desktop/Job/Btaskee/testing/next-todo-app/pages/users.js";
 
 
@@ -11167,19 +11149,19 @@ var User = function User(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 6
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 7
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_usertable__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
     },
     __self: this
   })));
