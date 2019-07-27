@@ -11,7 +11,7 @@ export default class extends Component{
     }
 
         getInitialProps(){
-        const res = fetch('http://localhost:4000/api/users')
+        const res = fetch('https://next-todo-app.phucanvn2012.now.sh/api/users')
         .then(res => res.json())
         .then(
           (result) => {

@@ -63,7 +63,7 @@ export default class CreateUser extends Component {
             role: this.state.role
         }
 
-        axios.put('http://localhost:4000/api/users/' + editUser.id,editUser)
+        axios.put('https://next-todo-app.phucanvn2012.now.sh/api/users/' + editUser.id,editUser)
             .then(res => {
                 console.log(res.data);
             });

@@ -30,7 +30,7 @@ export default class CreateUser extends Component {
         }
 
         console.log(deleteUser);
-        axios.delete('http://localhost:4000/api/users/' + deleteUser.id)
+        axios.delete('https://next-todo-app.phucanvn2012.now.sh/api/users/' + deleteUser.id)
             .then(res => {
                 console.log(res.data);
             });
