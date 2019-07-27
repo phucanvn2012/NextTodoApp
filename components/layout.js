@@ -4,7 +4,7 @@ import Navbar from "./navbar";
 const Layout = (props) => (
     <div>
         <Head>
-            <title>Todo App</title>
+            <title>UserManagement</title>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cerulean/bootstrap.min.css"/>        
         </Head>
         <Navbar/>

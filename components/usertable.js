@@ -11,7 +11,7 @@ export default class extends Component{
     }
 
         getInitialProps(){
-        const res = fetch('http://localhost:4000/user')
+        const res = fetch('http://localhost:4000/api/users')
         .then(res => res.json())
         .then(
           (result) => {
@@ -24,7 +24,6 @@ export default class extends Component{
           // Note: it's important to handle errors here
           // instead of a catch() block so that we don't swallow
           // exceptions from actual bugs in components.
-          
           
         ).catch((e)=>{
             console.log(e);
@@ -59,13 +58,14 @@ export default class extends Component{
         }
         var myData = Object.assign({}, this.state.users[0]);
         let header = Object.keys(myData)
-        console.log(header);
-
+        console.log(this.state);
+        
         return header.map((key,index)=>{
-
-            return (
+            if (key !== "_id"){                
+                return (
                 <th key={index} >{key.toUpperCase()}</th>
-            )
+                )
+            }
         })
     }
 
