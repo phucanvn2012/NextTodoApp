@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import UserModel from '../server/user.model';
 
 export default class CreateUser extends Component {
 
@@ -65,10 +64,7 @@ export default class CreateUser extends Component {
         }
 
         axios.post('http://localhost:4000/api/users/add', newUser)
-            .then(res => {
-                var user = new UserModel(res.data);
-                user.save();
-            });
+            .then(res => console.log(res.data));
 
         this.setState({
             id:0,

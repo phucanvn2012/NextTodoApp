@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import UserModel from '../server/user.model';
 
 export default class CreateUser extends Component {
 
